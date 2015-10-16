@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         viewPager=(ViewPager)findViewById(R.id.viewpager);
         setupViewPager(viewPager);
+
         tabLayout=(TabLayout)findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
@@ -45,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
     }
     private  void setupViewPager(ViewPager viewPager){
         ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getFragmentManager());
-        viewPagerAdapter.addFragment(new OneFragment(),"ONE");
-        viewPagerAdapter.addFragment(new TwoFragment(),"TWO");
-        viewPagerAdapter.addFragment(new ThreeFragment(),"THREE");
+        viewPagerAdapter.addFragment(new OneFragment(),"Home");
+        viewPagerAdapter.addFragment(new TwoFragment(),"Profile");
+        viewPagerAdapter.addFragment(new ThreeFragment(),"Leaderboard");
         viewPager.setAdapter(viewPagerAdapter);
 
     }
